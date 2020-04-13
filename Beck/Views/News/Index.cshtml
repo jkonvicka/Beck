@@ -3,13 +3,12 @@
 }
 @using System.ServiceModel.Syndication;
 @model List<SyndicationItem>
-
 <h1 class="mt-5">Zprávy</h1>
 @foreach (SyndicationItem item in Model as List<SyndicationItem>)
 {
     <div class="card w-100" style="margin-bottom:10px;">
         <div class="card-body">
-            <span class="badge badge-secondary float-right">@item.PublishDate.ToString("mm/dd/yyyy HH:mm:ss")</span>
+            <span class="badge badge-secondary float-right">@item.PublishDate.ToString("dd/MM/yyyy HH:mm:ss")</span>
             <h5 class="card-title">@item.Title.Text</h5>
             <p class="card-text">@item.Summary.Text</p>
             @if (@item.Links.Count > 0)

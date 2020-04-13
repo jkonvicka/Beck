@@ -14,7 +14,12 @@ namespace Beck.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View(RssReader.GetNews("https://www.novinky.cz/rss/stalo-se", 3));
+            HomeDataBag homeData = new HomeDataBag();
+            homeData.CovidTestList = CsvReader.Get("https://onemocneni-aktualne.mzcr.cz/api/v1/covid-19/testy.csv"); ;
+            homeData.RssNewsList = RssReader.GetNews("https://www.novinky.cz/rss/stalo-se", 3);
+            return View(homeData);
         }
+
+
     }
 }
