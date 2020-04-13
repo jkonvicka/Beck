@@ -1,0 +1,26 @@
+﻿@using System.ServiceModel.Syndication;
+@model List<SyndicationItem>
+@{
+    ViewBag.Title = "Beck";
+}
+<h1 class="mt-5">Vítej na Beck IS</h1>
+<p class="lead">Poslední zprávy:</p>
+@foreach (SyndicationItem item in Model as List<SyndicationItem>)
+{
+    <div class="card w-100" style="margin-bottom:10px;">
+        <div class="card-body">
+            <span class="badge badge-secondary float-right">@item.PublishDate.DateTime.ToString()</span>
+            <h5 class="card-title">@item.Title.Text</h5>
+            <p class="card-text">@item.Summary.Text</p>
+            @if (@item.Links.Count > 0)
+            {
+                <a target="_blank" href="@item.Links[0].Uri" class="btn btn-link float-right">Zdroj</a>
+            }
+            else
+            {
+                <a target="_blank" href="" class="btn btn-link disabled float-right">Zdroj nebylo možné načíst</a>
+            }
+        </div>
+    </div>
+}
+<a href="@Url.Action("Index", "News")" class="btn btn-outline-primary  float-right">Více zpráv</a>
