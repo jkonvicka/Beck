@@ -9,7 +9,7 @@
 {
     <div class="card w-100" style="margin-bottom:10px;">
         <div class="card-body">
-            <span class="badge badge-secondary float-right">@item.PublishDate.DateTime.ToString()</span>
+            <span class="badge badge-secondary float-right">@item.PublishDate.ToString("mm/dd/yyyy HH:mm:ss")</span>
             <h5 class="card-title">@item.Title.Text</h5>
             <p class="card-text">@item.Summary.Text</p>
             @if (@item.Links.Count > 0)
