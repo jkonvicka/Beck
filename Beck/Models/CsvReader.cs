@@ -14,15 +14,15 @@ namespace Beck.Models
 
         private static WebClient client = new WebClient();
         private static string jsonData;
-        public static List<CovidTest> CovidTestList { get; private set; }
-        public static List<CovidTest> Get(string url)
+        public static List<CovidData> CovidTestList { get; private set; }
+        public static List<CovidData> Get(string url)
         {
             char[] dataDivisors = new char[] { ',', '\r' };
             string[] tempCsvData = GetCSV(url).Split(dataDivisors);
             string[] data = new string[3];
             int iterator = 0;
             bool skipFirstRow = false;
-            CovidTestList = new List<CovidTest>();
+            CovidTestList = new List<CovidData>();
             foreach (string item in tempCsvData)
             {
 
@@ -37,7 +37,7 @@ namespace Beck.Models
                 }
                 else if (iterator == 3)
                 {
-                    CovidTestList.Add(new CovidTest(data[0].Substring(1,data[0].Length-1), Convert.ToDouble(data[1]), Convert.ToDouble(data[2])));
+                    CovidTestList.Add(new CovidData(data[0].Substring(1,data[0].Length-1), Convert.ToDouble(data[1]), Convert.ToDouble(data[2])));
                     iterator = 0;
                 }
             }

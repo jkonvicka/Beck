@@ -8,7 +8,8 @@ namespace Beck.Models
 {
     public class HomeDataBag
     {
-        public List<CovidTest> CovidTestList { get; set;}
+        public List<CovidData> CovidTestList { get; set;}
+        public List<CovidData> CovidInfectionList { get; set; }
         public List<SyndicationItem> RssNewsList { get; set; }
     }
 }

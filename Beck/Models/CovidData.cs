@@ -8,17 +8,17 @@ using System.Web;
 namespace Beck.Models
 {
     [DataContract]
-    public class CovidTest
+    public class CovidData
     {
         public string Date { get; set; }
-        public double TestsCount { get; set; }
-        public double TestsTotal { get; set; }
+        public double DailyCount { get; set; }
+        public double TotalCount { get; set; }
 
-        public CovidTest(string date, double testsCount, double testsTotal)
+        public CovidData(string date, double testsCount, double testsTotal)
         {
             Date = date;
-            TestsCount = testsCount;
-            TestsTotal = testsTotal;
+            DailyCount = testsCount;
+            TotalCount = testsTotal;
         }
     }
 }

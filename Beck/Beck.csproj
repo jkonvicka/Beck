@@ -240,7 +240,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CovidTest.cs" />
+    <Compile Include="Models\CovidData.cs" />
     <Compile Include="Models\HomeDataBag.cs" />
     <Compile Include="Models\CsvReader.cs" />
     <Compile Include="Models\RssReader.cs" />
